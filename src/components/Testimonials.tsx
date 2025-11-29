@@ -39,8 +39,8 @@ const Testimonials: React.FC = () => {
   }
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-[#1B1F3B] to-[#2C3364] text-white">
-      <div className="container mx-auto px-4 md:px-6">
+    <section className="py-16 md:py-24 bg-gradient-to-br from-[#1B1F3B] to-[#2C3364] text-white overflow-hidden">
+      <div className="container mx-auto px-4 md:px-6 box-border">
         <motion.div className="text-center mb-12" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-100px' }} transition={{ duration: 0.7 }}>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
           <p className="text-lg text-gray-200 max-w-3xl mx-auto">Don't just take our word for it. Here's what our clients have to say about working with Cloud Nexus.</p>

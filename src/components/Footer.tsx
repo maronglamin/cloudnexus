@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook, Instagram } from 'luc
 const Footer: React.FC = () => {
   return (
     <footer className="bg-[#1B1F3B] text-white pt-16 pb-8">
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container mx-auto px-4 md:px-6 box-border">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
             <h3 className="text-xl font-bold mb-4">Cloud Nexus</h3>

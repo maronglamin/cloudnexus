@@ -9,6 +9,19 @@ html, body, #root {
 body {
   @apply bg-white text-gray-900 antialiased;
 }
+/* Prevent any accidental horizontal scrolling across the site */
+html, body {
+  overflow-x: hidden;
+}
+/* Ensure no default margins/padding cause side gaps on mobile */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+#root {
+  width: 100%;
+}
 
 /* Tailwind v4 theme tokens for fonts */
 @theme {

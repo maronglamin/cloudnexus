@@ -5,8 +5,8 @@ const AboutSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'mission' | 'vision'>('mission')
 
   return (
-    <section className="py-16 md:py-24 bg-gray-50">
-      <div className="container mx-auto px-4 md:px-6">
+    <section className="py-16 md:py-24 bg-gray-50 overflow-hidden">
+      <div className="container mx-auto px-4 md:px-6 box-border">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-100px' }} transition={{ duration: 0.7 }}>
             <h2 className="text-3xl md:text-4xl font-bold text-[#1B1F3B] mb-6">About Cloud Nexus</h2>

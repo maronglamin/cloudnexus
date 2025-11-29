@@ -3,8 +3,9 @@ import { motion } from 'framer-motion'
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative pt-20 pb-16 md:pt-28 md:pb-24 overflow-hidden bg-gradient-to-br from-[#1B1F3B] to-[#2C3364]">
-      <div className="absolute inset-0 opacity-20">
+    <section id="hero" className="relative w-full pt-24 pb-14 sm:pt-28 sm:pb-24 overflow-hidden overflow-x-hidden bg-gradient-to-br from-[#1B1F3B] to-[#2C3364]">
+      {/* Photo overlay - softened on mobile to keep text readable */}
+      <div className="absolute inset-0 opacity-15 sm:opacity-20 pointer-events-none" aria-hidden="true">
         <div
           className="absolute inset-0"
           style={{
@@ -16,7 +17,8 @@ const Hero: React.FC = () => {
           }}
         ></div>
       </div>
-      <div className="absolute inset-0 opacity-10">
+      {/* Grid pattern - hidden on small screens to avoid clutter */}
+      <div className="absolute inset-0 opacity-10 hidden sm:block pointer-events-none" aria-hidden="true">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
@@ -26,10 +28,19 @@ const Hero: React.FC = () => {
           <rect width="100%" height="100%" fill="url(#grid)" />
         </svg>
       </div>
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
+      {/* Subtle bottom fade to ensure smooth transition into the wave divider */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-24 sm:h-32 pointer-events-none"
+        style={{
+          background:
+            'linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.15) 40%, rgba(255,255,255,0.4) 70%, rgba(255,255,255,0.8) 100%)'
+        }}
+        aria-hidden="true"
+      />
+      <div className="mx-auto w-full max-w-screen-xl px-4 md:px-6 relative z-10 box-border">
+        <div className="max-w-none sm:max-w-4xl mx-0 sm:mx-auto text-center">
           <motion.h1
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-5 sm:mb-6 leading-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
@@ -37,7 +48,7 @@ const Hero: React.FC = () => {
             We Build Tech That Powers Progress
           </motion.h1>
           <motion.p
-            className="text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto"
+            className="text-base sm:text-lg md:text-xl text-gray-200 mb-7 sm:mb-8 max-w-none mx-0 sm:max-w-3xl sm:mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
@@ -45,7 +56,7 @@ const Hero: React.FC = () => {
             End-to-end digital transformation solutions designed to modernize your business, secure your data, and accelerate your growth in the digital landscape.
           </motion.p>
           <motion.div
-            className="flex flex-col sm:flex-row justify-center gap-4"
+            className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
@@ -64,22 +75,22 @@ const Hero: React.FC = () => {
                   window.location.href = '/#contact'
                 }
               }}
-              className="px-8 py-3 bg-[#2F80ED] hover:bg-[#1a6ad2] text-white font-medium rounded-md transition-colors text-center"
+              className="px-7 sm:px-8 py-3 bg-[#2F80ED] hover:bg-[#1a6ad2] text-white font-medium rounded-md transition-colors text-center"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               Let's Talk
             </motion.a>
-            <motion.a href="#services" className="px-8 py-3 bg-transparent border border-white hover:bg-white/10 text-white font-medium rounded-md transition-colors text-center" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <motion.a href="#services" className="px-7 sm:px-8 py-3 bg-transparent border border-white hover:bg-white/10 text-white font-medium rounded-md transition-colors text-center" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               Explore Services
             </motion.a>
           </motion.div>
         </div>
       </div>
       {/* Subtle layered wave divider for a smooth transition to white */}
-      <div className="pointer-events-none absolute -bottom-px left-0 right-0 leading-[0]">
+      <div className="pointer-events-none absolute -bottom-px left-0 right-0 leading-[0] overflow-hidden">
         <svg
-          className="block w-full h-[80px] md:h-[120px]"
+          className="block w-full h-[56px] sm:h-[80px] md:h-[120px]"
           viewBox="0 0 1440 120"
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="none"

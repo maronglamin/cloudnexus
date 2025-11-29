@@ -64,7 +64,7 @@ const CTASection: React.FC = () => {
 
   return (
     <section id="contact" className="py-16 md:py-20 bg-white">
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container mx-auto px-4 md:px-6 box-border">
         <motion.div className="bg-gradient-to-br from-[#1B1F3B] to-[#2C3364] rounded-2xl overflow-hidden shadow-xl" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-100px' }} transition={{ duration: 0.7 }}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="p-8 md:p-12 relative z-10">
